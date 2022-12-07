@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import useContador from '../Contador'
 
 const Mascien =() => {
 
-const [Mascien, setMascien] = useState(0)
+const {value, incrementValue, decrementValue} = useContador(100, 100)
   return (
     <div>
-        <h2>El resultado es {Mascien}</h2>
+        <h2>El resultado es {value}</h2>
 
-          <button className='inline-flex' onClick={() => setMascien(Mascien + 100)}>Suma 100</button>
-          <button className='inline-flex, bmalo' onClick={() => setMascien(Mascien - 100)}>Resta 100</button>
+          <button className='inline-flex' onClick={incrementValue}>Suma 100</button>
+          
+          <button className='inline-flex, bmalo' onClick={decrementValue}>Resta 100</button>
     </div>
   )
 }
