@@ -4,9 +4,9 @@ const useContador = ( sumar = 1, restar = 1) => {
     
     const [value, setValue] = useState(0)
 
-    const incrementValue = () => setValue(value + sumar)
+    const incrementValue = () => setValue((preValue) =>preValue + sumar)
 
-    const decrementValue = () => setValue(value - restar)
+    const decrementValue = () => setValue((preValue) =>preValue - restar)
 
   return {
     value,
